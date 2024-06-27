@@ -21,7 +21,7 @@ client = commands.Bot(command_prefix= '$',intents=intents)
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.idle,activity=discord.Game('with your mom'))
+    await client.change_presence(status=discord.Status.idle,activity=discord.Game('songs'))
     print('bot is active now')
 
 @client.event
@@ -98,9 +98,9 @@ async def image(ctx,message="discord"):
 async def leave(ctx):
     if(ctx.voice_client):
         await ctx.guild.voice_client.disconnect()
-        await ctx.send("i am disconnected you pervert")
+        await ctx.send("i am disconnected ")
     else:
-        await ctx.send("i am not in channel you dance daddy")         
+        await ctx.send("i am not in channel ")         
 
 
 @client.command(pass_context = True)
@@ -207,11 +207,7 @@ async def button(ctx):
     # Send a message with the button and view
     await ctx.send("Here's an example button:", view=view)
 
-@client.event
-async def on_button_click(interaction):
-    # Handle button click events
-    if interaction.custom_id == "button":
-        await interaction.response.send_message("Button clicked!")        
+      
 
 
 
